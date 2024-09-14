@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cryptocurrency_app/pages/auth.dart';
 import 'package:cryptocurrency_app/pages/components/navbar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Navbar()));
+          context, MaterialPageRoute(builder: (context) => Authentication()));
     });
   }
 
@@ -41,31 +42,8 @@ class _SplashScreenState extends State<SplashScreen> {
               // ),
               ),
           child: Image.asset(
-            'assets/images/1.gif',
-          )
-          // child: const Column(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   crossAxisAlignment: CrossAxisAlignment.start,
-          //   children: [
-          //     Text(
-          //       '     Crypto',
-          //       style: TextStyle(
-          //         fontSize: 44,
-          //         fontWeight: FontWeight.w900,
-          //         color: Color(0xff081c36),
-          //       ),
-          //     ),
-          //     Text(
-          //       '            Curriency',
-          //       style: TextStyle(
-          //         fontSize: 44,
-          //         fontWeight: FontWeight.w900,
-          //         color: Color(0xff081c36),
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          ),
+            'assets/images/bitcoin.gif',
+          )),
     );
   }
 }

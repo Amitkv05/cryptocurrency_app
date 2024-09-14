@@ -1,3 +1,4 @@
+import 'package:cryptocurrency_app/pages/components/profile.dart';
 import 'package:cryptocurrency_app/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _NavbarState extends State<Navbar> {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    Settings(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:cryptocurrency_app/local_storage/all_local_storage.dart';
+import 'package:cryptocurrency_app/pages/auth.dart';
 import 'package:cryptocurrency_app/pages/splash_screen.dart';
 import 'package:cryptocurrency_app/provider/crypto_provider.dart';
 import 'package:cryptocurrency_app/provider/theme_provider.dart';
@@ -32,6 +33,7 @@ class MainApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: ThemeData(
                 primaryColor: Colors.white,
+                secondaryHeaderColor: Colors.black,
                 brightness: Brightness.light,
                 scaffoldBackgroundColor: Colors.white,
                 appBarTheme: const AppBarTheme(
@@ -42,6 +44,7 @@ class MainApp extends StatelessWidget {
                     ))),
             darkTheme: ThemeData(
               primaryColor: Colors.black.withOpacity(0.9),
+              secondaryHeaderColor: Colors.white,
               brightness: Brightness.dark,
               scaffoldBackgroundColor: const Color(0xff15161a),
               appBarTheme: const AppBarTheme(
