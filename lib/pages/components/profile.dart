@@ -10,7 +10,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  bool isThemeSwitch = true;
+  bool isThemeSwitch = false;
   bool isNotificationSwitch = false;
   @override
   Widget build(BuildContext context) {
@@ -81,142 +81,143 @@ class _SettingsState extends State<Settings> {
                         topRight: Radius.circular(12))),
                 child: Padding(
                     padding:
-                        const EdgeInsets.only(left: 20, right: 15, top: 18),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          leading: const Icon(
-                            Icons.color_lens_outlined,
-                            size: 28,
+                        const EdgeInsets.only(left: 20, right: 14, top: 18),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          options(
+                            icons: Icons.color_lens_outlined,
+                            title: 'Dark Mode',
+                            trailing: Switch(
+                              value: isThemeSwitch,
+                              onChanged: ((value) {
+                                setState(() {
+                                  isThemeSwitch = value;
+                                  themeProvider.toggleTheme();
+                                });
+                              }),
+                            ),
                           ),
-                          title: const Text(
-                            'Dark mode',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
+                          options(
+                            icons: Icons.account_circle_outlined,
+                            title: 'Account',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          trailing: Switch(
-                            value: isThemeSwitch,
-                            onChanged: ((value) {
-                              setState(() {
-                                themeProvider.toggleTheme();
-                                isThemeSwitch = value;
-                              });
-                            }),
+                          options(
+                            icons: Icons.wallet_rounded,
+                            title: 'Billing/Payment',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                        ),
-                        ListTile(
-                          leading: const Icon(
-                            Icons.notifications_none_rounded,
-                            size: 28,
+                          options(
+                            icons: Icons.history_rounded,
+                            title: 'History',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          title: const Text(
-                            'Notification',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
+                          options(
+                            icons: Icons.translate,
+                            title: 'Language',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          trailing: Switch(
-                            value: isNotificationSwitch,
-                            onChanged: ((newvalue) {
-                              setState(() {
-                                isNotificationSwitch = newvalue;
-                              });
-                            }),
+                          options(
+                            icons: Icons.settings,
+                            title: 'Settings',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.bookmark_border_rounded,
-                            size: 28,
+                          options(
+                            icons: Icons.security,
+                            title: 'Privacy Policy',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          title: Text(
-                            'Bookmark',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
+                          options(
+                            icons: Icons.question_mark_rounded,
+                            title: 'FAQ',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.add_box_outlined,
-                            size: 28,
+                          options(
+                            icons: Icons.description_outlined,
+                            title: 'Terms & Conditions',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          title: Text(
-                            'Create News',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
+                          options(
+                            icons: Icons.info_outline,
+                            title: 'About us',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.edit_document,
-                            size: 28,
+                          options(
+                            icons: Icons.contact_page_outlined,
+                            title: 'Contact Us',
+                            trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_forward_ios_rounded),
+                            ),
                           ),
-                          title: Text(
-                            'Manage News',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.thumbs_up_down_outlined,
-                            size: 28,
-                          ),
-                          title: Text(
-                            'Manage Preferences',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.security,
-                            size: 28,
-                          ),
-                          title: Text(
-                            'Privacy Policy',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.description_outlined,
-                            size: 28,
-                          ),
-                          title: Text(
-                            'Terms & Conditions',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.info_outline,
-                            size: 28,
-                          ),
-                          title: Text(
-                            'About us',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.contact_page_outlined,
-                            size: 28,
-                          ),
-                          title: Text(
-                            'Contact Us',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )),
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class options extends StatelessWidget {
+  const options({
+    super.key,
+    required this.icons,
+    required this.title,
+    this.trailing,
+  });
+  final IconData icons;
+  final String title;
+  final Widget? trailing;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Card(
+        child: ListTile(
+            leading: CircleAvatar(
+              child: Icon(
+                icons,
+                size: 30,
+              ),
+            ),
+            title: Text(
+              title,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+            ),
+            trailing: trailing),
       ),
     );
   }

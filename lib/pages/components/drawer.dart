@@ -43,6 +43,10 @@ Widget drawer(context) {
           title: Text('Favorite'),
         ),
         const ListTile(
+          leading: Icon(Icons.wallet),
+          title: Text('Billing/Payment'),
+        ),
+        const ListTile(
           leading: Icon(Icons.newspaper_rounded),
           title: Text('News'),
         ),

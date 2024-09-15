@@ -1,3 +1,4 @@
+import 'package:cryptocurrency_app/pages/components/notification.dart';
 import 'package:cryptocurrency_app/pages/components/profile.dart';
 import 'package:cryptocurrency_app/pages/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _NavbarState extends State<Navbar> {
   List<Widget> pages = [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    NotificationPage(),
     Settings(),
   ];
   @override
@@ -50,7 +51,7 @@ class _NavbarState extends State<Navbar> {
             activeIcon: Icon(
               Icons.home,
               size: myHeight * 0.03,
-              color: Color(0xffFBC700),
+              color: Colors.blue.shade600,
             ),
           ),
           BottomNavigationBarItem(
@@ -62,7 +63,8 @@ class _NavbarState extends State<Navbar> {
             activeIcon: Icon(
               Icons.explore_rounded,
               size: myHeight * 0.03,
-              color: Color(0xffFBC700),
+              // color: Color(0xffFBC700),
+              color: Colors.blue.shade600,
             ),
           ),
           BottomNavigationBarItem(
@@ -74,7 +76,8 @@ class _NavbarState extends State<Navbar> {
             activeIcon: Icon(
               Icons.notifications_none_rounded,
               size: myHeight * 0.03,
-              color: Color(0xffFBC700),
+              // color: Color(0xffFBC700),
+              color: Colors.blue.shade600,
             ),
           ),
           BottomNavigationBarItem(
@@ -86,7 +89,9 @@ class _NavbarState extends State<Navbar> {
             activeIcon: Icon(
               Icons.account_circle_rounded,
               size: myHeight * 0.03,
-              color: Color(0xffFBC700),
+              color: Colors.blue.shade600,
+
+              // color: Color(0xffFBC700),
             ),
           ),
         ],
